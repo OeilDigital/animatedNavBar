@@ -1,0 +1,145 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 100%;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    /* display:flex; */
+    /* justify-content: center;
+    align-items: center; */
+}
+
+header {
+    display: flex;
+    /* flex-flow: row wrap; */
+    width: 100%;
+    height: 10%;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.logoblock {
+    width: 4%;
+    height: auto;
+    padding: 0 1vw;
+    display: inherit;
+    align-items: center;
+}
+
+.logoblock > img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+}
+
+nav {
+    width: 60%;
+    height: auto;
+    display: inherit;
+    justify-content: start;
+    align-items: center;
+}
+
+.menu{
+    width: 75%;
+    height: auto;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:2vw;
+}
+
+.item{
+    /* display: inline; */
+    position: relative;
+    width: 20vw;
+    height: auto;
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.8rem;
+    color:#ffffff00;
+    list-style-type: none;
+    /* letter-spacing: 0.3vw; */
+    text-align:center;
+    transition: color, 3s;
+}
+
+
+.item > a {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: inline;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 1.5vh;
+    /* background-color: red; */
+}
+
+.item > a::after{
+    margin-bottom: -0.8vh;
+    content: '';
+    bottom: 0;
+    left: 0;
+    position:absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffffe5;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.item:hover > a::after{
+    /* box-sizing: content-box; */
+    transform: scale(1);
+}
+
+@media screen and (max-width: 1350px){
+    .item {
+    font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 874px){
+    header{
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoblock {
+    width: 15%;
+    height: auto;
+    }
+
+    nav {
+        margin-top: 1vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    .item {
+        width: 35vw;
+    }
+
+    /* .item:hover::after{
+        box-sizing: content-box;
+        width:calc(100% - 5px);
+    } */
+    
+}
